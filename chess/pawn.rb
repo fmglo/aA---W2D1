@@ -1,14 +1,14 @@
 require_relative 'piece.rb'
 require_relative 'slideable.rb'
 
-class Rook < Piece
+class Pawn < Piece
   include Slideable
   
   def to_s
-    @color == :W ? "♖" : "♜"
+    @color == :W ? "♙" : "♟"
   end
   
   def move_dirs
-    ['lateral']
+    ['step']
   end
 end

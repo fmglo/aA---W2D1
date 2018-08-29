@@ -22,9 +22,9 @@ class Display
       print "#{row} "
       (0..7).each do |col|
         if @cursor.cursor_pos == [row,col]
-          print "#{@board[[row,col]]} ".colorize(:background => :blue )
+          print "#{@board[[row,col]]} ".colorize(:background => :red )
         elsif (row + col).even?
-          print "#{@board[[row,col]]} ".colorize(:background => :magenta )
+          print "#{@board[[row,col]]} ".colorize(:background => :light_black )
         else 
           print "#{@board[[row,col]]} ".colorize(:background => :black )
         end 
@@ -48,6 +48,6 @@ if __FILE__ == $PROGRAM_NAME
   c = Cursor.new([0,0], b)
   d = Display.new(b, c)
   
-  # d.temp_play
-  p b[[7,1]].moves
+  d.temp_play
+  # p b[[7,1]].moves
 end 

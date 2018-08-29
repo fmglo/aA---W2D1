@@ -2,7 +2,10 @@ require_relative 'piece.rb'
 require_relative 'cursor.rb'
 require_relative 'queen.rb'
 require_relative 'bishop.rb'
-
+require_relative 'rook.rb'
+require_relative 'king.rb'
+require_relative 'knight.rb'
+require_relative 'pawn.rb'
 class Board
   attr_reader :rows
   
@@ -14,40 +17,40 @@ class Board
   def populate_board
     self[[7,0]] = Rook.new(:W, self, [7,0])
     self[[7,1]] = Bishop.new(:W, self, [7,1])
-    # self[[7,2]] = Knight.new(:W, self, [7,2])
+    self[[7,2]] = Knight.new(:W, self, [7,2])
     self[[7,3]] = King.new(:W, self, [7,3])
     self[[7,4]] = Queen.new(:W, self, [7,4])
-    # self[[7,5]] = Knight.new(:W, self, [7,5])
+    self[[7,5]] = Knight.new(:W, self, [7,5])
     self[[7,6]] = Bishop.new(:W, self, [7,6])
     self[[7,7]] = Rook.new(:W, self, [7,7])
-    # 
-    # w_pawn_1 = Pawn.new(:W, self, [6,0])
-    # w_pawn_2 = Pawn.new(:W, self, [6,1])
-    # w_pawn_3 = Pawn.new(:W, self, [6,2])
-    w_pawn_4 = Pawn.new(:W, self, [6,3])
-    w_pawn_5 = Pawn.new(:W, self, [6,4])
-    w_pawn_6 = Pawn.new(:W, self, [6,5])
-    # w_pawn_7 = Pawn.new(:W, self, [6,6])
-    # w_pawn_8 = Pawn.new(:W, self, [6,7])
-    # 
-    # 
-    # b_pawn_1 = Pawn.new(:B, self, [1,0])
-    # b_pawn_2 = Pawn.new(:B, self, [1,1])
-    # b_pawn_3 = Pawn.new(:B, self, [1,2])
-    # b_pawn_4 = Pawn.new(:B, self, [1,3])
-    b_pawn_5 = Pawn.new(:B, self, [1,4])
-    # b_pawn_6 = Pawn.new(:B, self, [1,5])
-    # b_pawn_7 = Pawn.new(:B, self, [1,6])
-    # b_pawn_8 = Pawn.new(:B, self, [1,7])
-    # 
-    # b_rook_1 = Rook.new(:B, self, [0,0])
-    # b_bishop_1 = Bishop.new(:B, self, [0,1])
-    # b_knight_1 = Knight.new(:B, self, [0,2])
-    # b_king = King.new(:B, self, [0,3])
+     
+    self[[6,0]]  = Pawn.new(:W, self, [6,0])
+    self[[6,1]]  = Pawn.new(:W, self, [6,1])
+    self[[6,2]]  = Pawn.new(:W, self, [6,2])
+    self[[6,3]]  = Pawn.new(:W, self, [6,3])
+    self[[6,4]]  = Pawn.new(:W, self, [6,4])
+    self[[6,5]]  = Pawn.new(:W, self, [6,5])
+    self[[6,6]]  = Pawn.new(:W, self, [6,6])
+    self[[6,7]]  = Pawn.new(:W, self, [6,7])
+     
+    
+    self[[1,0]]  = Pawn.new(:B, self, [1,0])
+    self[[1,1]]  = Pawn.new(:B, self, [1,1])
+    self[[1,2]]  = Pawn.new(:B, self, [1,2])
+    self[[1,3]]  = Pawn.new(:B, self, [1,3])
+    self[[1,4]]  = Pawn.new(:B, self, [1,4])
+    self[[1,5]]  = Pawn.new(:B, self, [1,5])
+    self[[1,6]]  = Pawn.new(:B, self, [1,6])
+    self[[1,7]]  = Pawn.new(:B, self, [1,7])
+     
+    self[[0,0]] = Rook.new(:B, self, [0,0])
+    self[[0,1]] = Bishop.new(:B, self, [0,1])
+    self[[0,2]] = Knight.new(:B, self, [0,2])
+    self[[0,3]] = King.new(:B, self, [0,3])
     self[[0,4]] = Queen.new(:B, self, [0,4])
-    # b_knight_2 = Knight.new(:B, self, [0,5])
-    # b_bishop_2 = Bishop.new(:B, self, [0,6])
-    # b_rook_2 = Rook.new(:B, self, [0,7])
+    self[[0,5]] = Knight.new(:B, self, [0,5])
+    self[[0,6]] = Bishop.new(:B, self, [0,6])
+    self[[0,7]] = Rook.new(:B, self, [0,7])
   end
   
   def [](pos)
